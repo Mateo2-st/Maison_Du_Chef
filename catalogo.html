@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla principal - Maison Du Chef</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="barraSuperior">
+        <div class="iconoMenu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="opcionesSuperior">
+            <a href="../cuenta/cuenta.html"><i class="fa-solid fa-person"></i> Cuenta</a>
+            <a href="../login/login.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
+        </div>
+    </header>
+
+    <!--Menu hamburguesa-->
+    <nav class="menuLateral" id="menu-lateral">
+        <div class="logoMenu">
+            <img src="imagen logo/logo.png" alt="Maison Du Chef">
+        </div>
+        <button id="cerrar-menu">&#10006;</button>
+        <img src="" alt="">
+        <ul>x
+             <li><a href="../catálogo/catalogo.html">Inicio</a></li>
+            <li><a href="#">Categorías</a></li>
+            <li><a href="/Codigo Catalogo/Maison.html">Restaurantes</a></li>
+            <li><a href="#unete">Únete a nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="../login/login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+
+    <!--Imagen principal-->
+    <div class="principal">
+        <div class="principalIzquierda">
+        </div>
+        <div class="principalDerecha">
+            <h1>Maison Du Chef</h1>
+            <p>"Cada plato lleva un sueño, tú lo haces posible"</p>
+            <div class="cajaBusqueda">
+                <input type="text" placeholder="Buscar...">
+                <button>Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Categorias-->
+    <div class="categorias">
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/desayuno.png" alt="">
+            </div>
+            <p>Desayunos</p>
+            <button>Ver mas</button>
+        </div>
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/almuerzo.png" alt="">
+            </div>
+            <p>Almuerzo</p>
+            <button>Ver mas</button>
+        </div>
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/pastas.png" alt="">
+            </div>
+            <p>Pastas</p>
+            <button>Ver mas</button>
+        </div>
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/hamburguesa.png" alt="">
+            </div>
+            <p>C. Rápidas</p>
+            <button>Ver mas</button>
+        </div>
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/bebidas.png" alt="bebidas">
+            </div>
+            <p>Bebidas</p>
+            <button>Ver mas</button>
+        </div>
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/picadas.png" alt="">
+            </div>
+            <p>Picadas</p>
+            <button>Ver mas</button>
+        </div>
+        <div class="categoria">
+            <div class="circulo">
+                <img src="imagenes pantalla principal/pastas.png" alt="">
+            </div>
+            <p>Postres</p>
+            <button>Ver más</button>
+        </div>
+    </div>
+
+    <!--Restaurantes destacados-->
+    <div class="restaurantes">
+        <h2>Restaurantes destacados del momento</h2>
+        <div class="rejillaRestaurantes">
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/crepes.png" alt="Restaurante 1">
+                </div>
+                <button>Ver mas</button>
+            </div>
+
+            
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/dominos.png" alt="Restaurante 2">
+                </div>
+                <button>Ver mas</button>
+            </div>
+            
+            
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/juanvaldez.png" alt="Restaurante 3">
+                </div>
+                <button>Ver mas</button>
+            </div>
+            
+            
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/papa.png" alt="Restaurante 4">
+                </div>
+                <button>Ver mas</button>
+            </div>
+        
+            
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/qbano.png" alt="Restaurante 5">
+                </div>
+                <button>Ver mas</button>
+            </div>
+            
+            
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/srbuñuelo.png" alt="Restaurante 6">
+                </div>
+                <button>Ver mas</button>
+            </div>
+            
+            
+            <div class="restaurante">
+                <div class="circuloRestaurante">
+                    <img src="imagenes restaurantes/subway.png" alt="Restaurante 7">
+                </div>
+                <button>Ver mas</button>
+            </div>
+        </div>
+
+    <!--Apartado de unete a nosotros-->
+    <h2 class="marca">Unete a <span>Maison Du Chef</span></h2>
+    <div id="unete" class="unete">
+        
+            <div class="tarjeta">
+                <img src="imagenes pantalla principal/dueniorestaurante.jpg" alt="Registra tu restaurante">
+                <h3>Registra tu restaurante</h3>
+                <p>Conecta tu restaurante con cientos de clientes cada dia y haz crecer tu negocio</p>
+                <button>Conocer mas</button>
+            </div>
+        
+        <div class="tarjeta">
+            <img src="imagenes pantalla principal/domiciliario.jpg" alt="Unete a nuestros domiciliarios">
+            <h3>Conviertete en domiciliario</h3>
+            <p>Unete a nuestro grupo de domiciliarios y conviertete en uno de los beneficiarios de nuestros beneficios</p>
+            <button>Conocer más</button>
+        </div>
+
+        <div class="tarjeta">
+            <img src="imagenes pantalla principal/asistenciaalcliente.jpg" alt="Asistencia al cliente">
+            <h3>Asistencia al cliente</h3>
+            <p>¿Necesitas ayuda? Contacta con uno de nuestros asesores/administradores</p>
+            <button>Conocer mas</button>
+        </div>
+    </div>
+
+    <div class="contacto">
+        <form>
+            <h2>Contacto</h2>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="correo">Correo</label><br>
+            <input type="email" id="correo" name="correo"><br><br>
+
+            <label for="mensaje">Mensaje</label><br>
+            <input name="mensaje" id="mensaje"><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>
+     <p>&copy; 2025 Maison Du Chef</p>
+    </footer>
+    <script src="menu lateral/menulateral.js"></script>
+</body>
+</html>
