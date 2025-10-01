@@ -1,0 +1,130 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CATÁLOGO</title>
+  <link rel="stylesheet" href="Maison.css">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- CARRUSEL con header dentro -->
+  <div class="carousel-container">
+    <!-- Header superpuesto -->
+    <header class="overlay-header">
+      <div class="logo">CATÁLOGO</div>
+      <nav class="navbar">
+        <a href="../catálogo/catalogo.html" class="nav-icon"><i class="fa-solid fa-house"></i></a>
+        <input type="text" placeholder="Buscar..." class="search-bar">
+        <!-- CARRITO en el header -->
+        <a href="../Codigo Carrito/Carrito.html" id="openCartFromHeader" class="nav-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCountHeader" class="cart-count">0</span>
+        </a>
+        <a href="../login/login.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel-images">
+      <img src="/IMG carrusel/pan.jpg" alt="Comida 1" />
+      <img src="/IMG carrusel/pez.jpg" alt="Comida 2" />
+      <img src="/IMG carrusel/carne.jpg" alt="Comida 3" />
+      <img src="/IMG carrusel/chatarra.jpg" alt="Comida 4" />
+      <img src="/IMG carrusel/pizza.jpg" alt="Comida 5" />
+      <img src="/IMG carrusel/pollo.jpg" alt="Comida 6" />
+      <img src="/IMG carrusel/verdura.jpg" alt="Comida 7" />
+      <img src="/IMG carrusel/salud.jpg" alt="Comida 8" />
+    </div>
+  </div> <!-- cierre del carrusel-container -->
+
+  <!-- === BARRA DE FILTROS (debajo del carrusel) === -->
+  <div class="filter-bar">
+    <div class="filter-left">
+      <span class="filter-title">Filtrar por:</span>
+      <button class="filter-btn">Promos</button>
+      <button class="filter-btn">⭐ 4.5+</button>
+      <button class="filter-btn">⏱ 35 mins</button>
+      <button class="filter-btn">¡Nuevos!</button>
+    </div>
+
+    <div class="filter-right">
+      <label class="sort-label" for="sort">Ordenar por :</label>
+      <select id="sort" class="sort-select" aria-label="Ordenar por">
+        <option value="relevancia">Relevancia</option>
+        <option value="precio">Precio</option>
+        <option value="rapidez">Rapidez</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- === CATEGORÍAS === -->
+  <section class="catalog-categories">
+    <div id="categoriesWrapper" class="categories-wrapper"></div>
+  </section>
+
+  <!-- ====== LISTADO DE RESTAURANTES ====== -->
+  <section class="restaurants-section">
+    <h2 class="section-title">Restaurantes</h2>
+    <div id="restaurantsGrid" class="restaurants-grid"></div>
+  </section>
+
+  <!-- ====== MODAL RESTAURANTE ====== -->
+  <div id="restaurantModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <button id="modalCloseBtn" class="modal-close">&times;</button>
+
+      <!-- Imagen tipo banner -->
+      <div class="modal-banner">
+        <img id="modalImage" src="" alt="imagen del restaurante">
+      </div>
+
+      <!-- Contenido -->
+      <div class="modal-header">
+        <img id="modalLogo" class="modal-logo" src="" alt="Imagen del plato">
+        <div>
+          <h2 id="modalName"></h2>
+          <p id="modalMeta" class="meta-small"></p>
+        </div>
+      </div>
+
+      <!-- Descripción -->
+      <p id="modalDescription" class="modal-description"></p>
+
+      <!-- Cuerpo dinámico -->
+      <div id="modalBody" class="modal-body"></div>
+
+      <!-- Botón Agregar al Carrito -->
+      <button id="addToCartBtn" class="add-cart-btn">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- ===== BOTÓN FLOTANTE DEL CARRITO ===== -->
+  <button id="cartButton" class="cart-float-btn">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cartCount" class="cart-count">0</span>
+  </button>
+
+  <!-- ===== MODAL DEL CARRITO ===== -->
+  <div id="cartModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-box cart-box">
+      <button id="cartCloseBtn" class="modal-close">&times;</button>
+      <h2>🛒 Carrito de Compras</h2>
+      <div id="cartItems" class="cart-items">
+        <!-- Aquí se agregan dinámicamente los productos -->
+      </div>
+      <div class="cart-footer">
+        <p>Total: <span id="cartTotal">$0</span></p>
+        <button class="checkout-btn">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="Maison.js"></script>
+</body>
+</html>
