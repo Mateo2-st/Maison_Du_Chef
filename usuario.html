@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Atención al Usuario</title>
+  <link rel="stylesheet" href="usuario.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- === BARRA SUPERIOR (NO CAMBIADA) === -->
+  <header class="top-header">
+    <nav class="top-navbar">
+      <button class="hamburger-btn" onclick="window.location.href='Maison.html'">
+        ☰ Catálogo
+      </button>
+
+      <div class="right-controls">
+        <input type="text" placeholder="Buscar..." class="search-bar">
+
+        <a href="#" id="openCartFromHeader" class="nav-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCountHeader" class="cart-count">0</span>
+        </a>
+
+        <a href="login.html" class="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- === CONTENIDO PRINCIPAL === -->
+  <div class="atencion-container">
+    <h1>📞 Atención al Usuario</h1>
+    <p class="sub-text">¿Tienes algún inconveniente? Estamos aquí para ayudarte en todo momento.</p>
+
+    <!-- Selector desplegable -->
+    <div class="opcion-selector">
+      <button id="btnSeleccionarOpcion">📂 Seleccionar tipo de solicitud</button>
+      <ul id="listaOpciones" class="oculto">
+        <li data-opcion="Quejas o Reclamos">Quejas o Reclamos</li>
+        <li data-opcion="Sugerencias">Sugerencias</li>
+        <li data-opcion="Preguntas Frecuentes">Preguntas Frecuentes</li>
+        <li data-opcion="Ayuda con mi Cuenta">Ayuda con mi Cuenta</li>
+        <li data-opcion="Problemas con un Pedido">Problemas con un Pedido</li>
+        <li data-opcion="Métodos de Pago">Métodos de Pago</li>
+        <li data-opcion="Reembolsos">Reembolsos</li>
+        <li data-opcion="Información de Restaurantes">Información de Restaurantes</li>
+        <li data-opcion="Otro Tipo de Solicitud">Otro Tipo de Solicitud</li>
+      </ul>
+      <p id="opcionSeleccionada"></p>
+    </div>
+
+    <!-- Área de escritura -->
+    <div id="areaEscribir" class="oculto">
+      <textarea id="mensajeUsuario" placeholder="Escribe aquí tu mensaje..."></textarea>
+      <button id="btnEnviar">📤 Enviar</button>
+    </div>
+
+    <!-- Botones extra -->
+    <div class="acciones-extra">
+      <button id="btnPersonalizada">👩‍💼 Atención personalizada</button>
+      <button id="btnAbrirChat">💬 Abrir chat personalizado</button>
+    </div>
+
+    <!-- Chat (oculto hasta abrir) -->
+    <div id="chatBox" class="oculto">
+      <div id="chatMensajes" class="chat-mensajes">
+        <p class="bot">🤖 Bot: ¡Hola! Soy tu asistente virtual, ¿en qué puedo ayudarte?</p>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+        <button id="chatEnviar">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="usuario.js"></script>
+</body>
+</html>
