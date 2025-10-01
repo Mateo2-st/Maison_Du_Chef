@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Informe de Ventas</title>
+  <link rel="stylesheet" href="ventas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- === BARRA SUPERIOR PERSONALIZADA === -->
+  <header class="top-header">
+    <nav class="top-navbar">
+      <button class="hamburger-btn" onclick="window.location.href='Maison.html'">
+        ☰ Catálogo
+      </button>
+
+      <div class="right-controls">
+        <input type="text" placeholder="Buscar..." class="search-bar">
+
+        <a href="#" id="openCartFromHeader" class="nav-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCountHeader" class="cart-count">0</span>
+        </a>
+
+        <a href="login.html" class="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- === CONTENIDO PRINCIPAL === -->
+  <div class="informe-container">
+    <h1>📊 Informe de Ventas</h1>
+
+    <!-- === RESÚMENES DEL ÚLTIMO MES === -->
+    <section class="resumenes">
+      <h2>📦 Productos más vendidos (Último mes)</h2>
+      <table>
+        <tr><th>Producto</th><th>Ventas</th></tr>
+        <tr><td>Pizza finas hierbas</td><td>120</td></tr>
+        <tr><td>Granola con Yogur</td><td>95</td></tr>
+        <tr><td>Sándwich integral</td><td>80</td></tr>
+      </table>
+
+      <h2>🏪 Restaurantes con más ventas (Último mes)</h2>
+      <table>
+        <tr><th>Restaurante</th><th>Ventas</th></tr>
+        <tr><td>Restaurante La Casa</td><td>250</td></tr>
+        <tr><td>Bistro Saludable</td><td>180</td></tr>
+        <tr><td>Café Natural</td><td>160</td></tr>
+      </table>
+
+      <h2>💳 Métodos de pago más usados (Último mes)</h2>
+      <table>
+        <tr><th>Método</th><th>Uso</th></tr>
+        <tr><td>Tarjeta de crédito / débito</td><td>200</td></tr>
+        <tr><td>Transferencia bancaria</td><td>150</td></tr>
+        <tr><td>Pago móvil</td><td>120</td></tr>
+        <tr><td>Efectivo</td><td>90</td></tr>
+      </table>
+    </section>
+
+    <!-- === SELECCIÓN DE MES PARA GENERAR INFORME === -->
+    <div class="mes-selector">
+      <button id="btnSeleccionarMes">📅 Seleccionar mes</button>
+      <ul id="listaMeses" class="oculto">
+        <li data-mes="Enero">Enero</li>
+        <li data-mes="Febrero">Febrero</li>
+        <li data-mes="Marzo">Marzo</li>
+        <li data-mes="Abril">Abril</li>
+        <li data-mes="Mayo">Mayo</li>
+        <li data-mes="Junio">Junio</li>
+        <li data-mes="Julio">Julio</li>
+        <li data-mes="Agosto">Agosto</li>
+        <li data-mes="Septiembre">Septiembre</li>
+        <li data-mes="Octubre">Octubre</li>
+        <li data-mes="Noviembre">Noviembre</li>
+        <li data-mes="Diciembre">Diciembre</li>
+      </ul>
+      <p id="mesSeleccionado"></p>
+    </div>
+
+    <!-- === BOTONES DE ACCIÓN === -->
+    <div class="acciones-informe">
+      <button id="btnAdmin">📑 Generar informe en Excel (Administrador)</button>
+      <button id="btnVendedores">📈 Generar informe en Excel (Vendedores)</button>
+    </div>
+  </div>
+
+  <script src="ventas.js"></script>
+</body>
+</html>
