@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "lato", sans-serif;
+    background-color: rgb(205, 191, 174);
+    overflow: hidden;
+}
+
+.barraSuperior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4a3728;
+    padding: 10px 20px;
+}
+
+.imagenFondo {
+    flex: 1;
+}
+
+.imagenFondo img {
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.iconoMenu i {
+    color: #ffffff;
+}
+
+.cuenta a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.registro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px;
+    margin-left: 10vh;
+}
+
+.title {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.inputContainer{
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+}
+
+.input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: white;
+    color: #a0a2a7;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+
+}
+
+.input:focus+.label{
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(46, 61, 56);
+}
+
+.input:not(:placeholder-shown)+.label{
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.input:focus {
+    border: 2px solid rgb(189, 123, 24);
+}
+
+.submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 15px; 
+    border: none;
+    background-color: #9a7B4f;
+    color: #ffffff ;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.submitBtn:hover{
+    background-color: #352315;
+    transform: translateY(-5px);
+}
+
+
+/* Menu hamburguesa */
+.menuLateral {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #614d30;
+    color: #333;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.2); /* corregido */
+    font-weight: bold;
+}
+
+.menuLateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menuLateral ul li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.menuLateral ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.menuLateral ul li a:hover {
+    color: #4A2511;
+}
+
+.menuLateral.activo {
+    left: 0;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 00.3);
+    z-index: 900;
+}
+
+.overlay.activo {
+    display: block;
+}
+
+#cerrar-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #5e2c04;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease; /* corregido */
+}
+
+
+#cerrar-menu:hover {
+    background: #65350f;
+}
+
+.logoMenu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logoMenu img {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+}
+
+.iconoMenu {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}
+.iconoMenu i {
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none; 
+    color: #fff;
+}
+
+.cuenta a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espacio entre icono y texto */
+    font-weight: bold;
+}
+
+.cuenta a i {
+    font-size: 18px; /* tamaño del icono */
+}
+
+.logo img {
+    width: 100px;
+    height: 38px;
+    border-radius: 10PX;
+}
