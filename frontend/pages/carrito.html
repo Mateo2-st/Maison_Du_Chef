@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <!-- Iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/carrito.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="cart-header">
+    <a href="../pages/cuenta.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+    <h2>🍽 Tu Carrito de Compras</h2> 
+  </header>
+
+  <!-- Contenido -->
+  <main class="cart-container">
+    <div id="carrito-items" class="cart-items"></div>
+
+    <!-- Total -->
+    <div class="cart-total">
+      <p>Total: <span id="total">$0</span></p>
+    </div>
+
+    <!-- Botones -->
+    <div class="checkout">
+      <button class="btn-secondary" href="../pages/maison.html">
+        ⬅ Seguir comprando
+      </button>
+      <button class="btn" onclick="alert('✅ Pedido confirmado. ¡Gracias por tu compra!')" href="../pages/cuenta.html">
+        Finalizar Compra
+      </button>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script>
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    function renderCarrito() {
+      const contenedor = document.getElementById("carrito-items");
+      const totalElement = document.getElementById("total");
+      contenedor.innerHTML = "";
+      let total = 0;
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = "<p style='text-align:center; font-size:1.2rem;'>🛒 Tu carrito está vacío</p>";
+        totalElement.textContent = "$0";
+        return;
+      }
+
+      carrito.forEach((item, index) => {
+        total += item.precio;
+
+        const div = document.createElement("div");
+        div.classList.add("carrito-item");
+        div.innerHTML = `
+          <img src="${item.imagen}" alt="${item.nombre}">
+          <div class="carrito-item-info">
+            <h3>${item.nombre}</h3>
+            <p>${item.descripcion}</p>
+            <p><strong>$${item.precio}</strong></p>
+          </div>
+          <button class="btn-remove" onclick="eliminarItem(${index})">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        `;
+        contenedor.appendChild(div);
+      });
+
+      totalElement.textContent = "$" + total.toLocaleString();
+    }
+
+    function eliminarItem(index) {
+      carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      renderCarrito();
+    }
+
+    renderCarrito();
+  </script>
+</body>
+</html>

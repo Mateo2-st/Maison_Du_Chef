@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Seguimiento de Pedido</title>
+  <link rel="stylesheet" href="../css/pedido.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- === BARRA SUPERIOR PERSONALIZADA === -->
+  <header class="top-header">
+    <nav class="top-navbar">
+      <!-- Izquierda: botón hamburguesa / Catálogo -->
+      <div class="left-controls">
+        <button class="hamburger-btn" onclick="window.location.href='../pages/maison.html'">
+          ☰ Catálogo
+        </button>
+      </div>
+
+      <!-- Derecha: búsqueda, carrito y logout -->
+      <div class="right-controls">
+        <input type="text" placeholder="Buscar..." class="search-bar">
+
+        <a href="../pages/carrito.html
+        " class="nav-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCountHeader" class="cart-count">0</span>
+        </a>
+
+        <a href="../pageslogin.html" class="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- === CONTENIDO PRINCIPAL === -->
+  <div class="seguimiento-container">
+    <h1>📦 Seguimiento de tu Pedido</h1>
+
+    <div class="pedido-info">
+      <p><strong>Número de pedido:</strong> #123456</p>
+      <p><strong>Productos:</strong> Pizza finas hierbas, Granola con Yogur</p>
+      <p><strong>Hora de pedido:</strong> 7:45 p.m.</p>
+    </div>
+
+    <div class="estado-pedido">
+      <h3>Estado actual:</h3>
+      <ul class="progreso">
+        <li class="activo">📥 Recibido</li>
+        <li class="activo">👨‍🍳 Preparando</li>
+        <li>🚗 En camino</li>
+        <li>✅ Entregado</li>
+      </ul>
+    </div>
+
+    <div class="mapa">
+      <h3>📍 Ubicación aproximada de entrega:</h3>
+      <img src="../imagenes/Pedidos/mapa.jpg" alt="Mapa de entrega" />
+    </div>
+
+    <button onclick="volver()">← Volver al Catálogo</button>
+  </div>
+
+  <script src="../js/pedidos/pedido.js"></script>
+</body>
+</html>
