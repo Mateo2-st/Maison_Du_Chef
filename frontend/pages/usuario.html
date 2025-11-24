@@ -35,7 +35,7 @@
     <h1>📞 Atención al Usuario</h1>
     <p class="sub-text">¿Tienes algún inconveniente? Estamos aquí para ayudarte en todo momento.</p>
 
-    <!-- Selector desplegable -->
+    <!-- Selector -->
     <div class="opcion-selector">
       <button id="btnSeleccionarOpcion">📂 Seleccionar tipo de solicitud</button>
       <ul id="listaOpciones" class="oculto">
@@ -64,7 +64,7 @@
       <button id="btnAbrirChat">💬 Abrir chat personalizado</button>
     </div>
 
-    <!-- Chat (oculto hasta abrir) -->
+    <!-- Chat -->
     <div id="chatBox" class="oculto">
       <div id="chatMensajes" class="chat-mensajes">
         <p class="bot">🤖 Bot: ¡Hola! Soy tu asistente virtual, ¿en qué puedo ayudarte?</p>
@@ -73,6 +73,14 @@
         <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
         <button id="chatEnviar">Enviar</button>
       </div>
+    </div>
+  </div>
+
+  <!-- === MODAL DE MENSAJES (IGUAL QUE EL DEL CARRITO) === -->
+  <div id="modalMensaje" class="modal oculto">
+    <div class="modal-contenido">
+      <p id="modalTexto"></p>
+      <button id="modalCerrar">Cerrar</button>
     </div>
   </div>
 

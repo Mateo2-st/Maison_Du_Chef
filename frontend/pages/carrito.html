@@ -4,20 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito de Compras</title>
+
   <!-- Iconos -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <!-- Estilos -->
   <link rel="stylesheet" href="../css/carrito.css">
 </head>
+
 <body>
+
   <!-- Encabezado -->
   <header class="cart-header">
     <a href="../pages/cuenta.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
-    <h2>🍽 Tu Carrito de Compras</h2> 
+    <h2>🍽 Tu Carrito de Compras</h2>
   </header>
 
   <!-- Contenido -->
   <main class="cart-container">
+
     <div id="carrito-items" class="cart-items"></div>
 
     <!-- Total -->
@@ -27,16 +32,33 @@
 
     <!-- Botones -->
     <div class="checkout">
-      <button class="btn-secondary" href="../pages/maison.html">
+      <a class="btn-secondary" href="../pages/maison.html">
         ⬅ Seguir comprando
-      </button>
-      <button class="btn" onclick="alert('✅ Pedido confirmado. ¡Gracias por tu compra!')" href="../pages/cuenta.html">
+      </a>
+
+      <button class="btn" onclick="abrirModal()">
         Finalizar Compra
       </button>
     </div>
+
   </main>
 
-  <!-- Script -->
+  <!-- ================= MODAL ================= -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+
+      <span class="close" onclick="cerrarModal()">&times;</span>
+
+      <h3>✔ Pedido confirmado</h3>
+      <p>¡Gracias por tu compra!</p>
+
+      <br>
+
+      <a href="../pages/cuenta.html" class="btn">Aceptar</a>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPT ================= -->
   <script>
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -80,7 +102,24 @@
       renderCarrito();
     }
 
+    // ===== MODAL =====
+    function abrirModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target === document.getElementById("modal")) {
+        cerrarModal();
+      }
+    }
+
     renderCarrito();
   </script>
+
 </body>
 </html>
+  
