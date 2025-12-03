@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import mysql from "mysql2";
+import pool from '../config/db.js'
 
 dotenv.config();
 
@@ -24,5 +25,3 @@ const pool = mysql.createPool({
         console.error(` Error al conectar a la base de datos: ${error.code} - ${error.message}`);
     }
 })();
-
-export default pool;

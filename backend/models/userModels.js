@@ -1,39 +1,61 @@
-import pool from '../config/db.js'
+// models/userModels.js
+import pool from "../db.js";
 
-
-//Obtener usuarios
+/* ----------------------- OBTENER TODOS LOS USUARIOS ----------------------- */
 export const getAllUsers = async () => {
-    const [rows] = await pool.query( 'SELECT * FROM usuarios' )
-}   
+    const [rows] = await pool.query(`
+        SELECT u.idUsuario, u.nombre, u.correo, u.id_rol, r.nombreRol
+        FROM usuarios u
+        INNER JOIN roles r ON u.id_rol = r.idRol
+        ORDER BY u.idUsuario ASC
+    `);
+    return rows;
+};
 
+/* ----------------------- CREAR USUARIO ----------------------- */
+export const createUser = async ({ nombre, correo, contrasena, id_rol }) => {
+    const [result] = await pool.query(`
+        INSERT INTO usuarios (nombre, correo, contrasena, id_rol)
+        VALUES (?, ?, ?, ?)
+    `, [nombre, correo, contrasena, id_rol]);
 
-//Crear usuario
-export const createUser =  async ({ name, email, password }) => {
-    const [result] = await pool.query(
-        "INSERT INTO usuarios (name, email, password) VALUES = ?, ?, ?",
-        [name, email, password]
-    );
     return result.insertId;
-    };
-
-
-//Buscar usuario por email
-export const findUserByEmail = async(email) => {
-    const [rows] = await pool.query(
-        "SELECT * from usuarios WHERE email = ?"
-        [email]
-    );
-    return rows[0];
 };
 
-//ACtualizar usuario
-export const updateUSer = async (id, { name, email }) => {
-    const [result] = await pool.query("SELECT * FROM usuarios");
-    return rows;
+/* ----------------------- BUSCAR USUARIO POR CORREO ----------------------- */
+export const findUserByEmail = async (correo) => {
+    const [rows] = await pool.query(`
+        SELECT * FROM usuarios WHERE correo = ?
+    `, [correo]);
+
+    return rows[0] || null;
 };
 
-//Eliminar usuario
+/* ----------------------- BUSCAR USUARIO POR ID ----------------------- */
+export const findUserById = async (id) => {
+    const [rows] = await pool.query(`
+        SELECT * FROM usuarios WHERE idUsuario = ?
+    `, [id]);
+
+    return rows[0] || null;
+};
+
+/* ----------------------- ACTUALIZAR USUARIO ----------------------- */
+export const updateUser = async (id, { nombre, correo, id_rol }) => {
+    const [result] = await pool.query(`
+        UPDATE usuarios
+        SET nombre = ?, correo = ?, id_rol = ?
+        WHERE idUsuario = ?
+    `, [nombre, correo, id_rol, id]);
+
+    return result.affectedRows > 0;
+};
+
+/* ----------------------- ELIMINAR USUARIO ----------------------- */
 export const deleteUser = async (id) => {
-    const [rows] = await pool.query("SELECT * FROM usuarios");
-    return rows;
-}
+    const [result] = await pool.query(`
+        DELETE FROM usuarios WHERE idUsuario = ?
+    `, [id]);
+
+    return result.affectedRows > 0;
+};

@@ -67,6 +67,7 @@ create table detalles_pedido (
     foreign key (id_producto) references productos(idProducto)
 );
 
+
 -- TABLA DE PAGOS
 create table pagos (
     idPago int auto_increment primary key,

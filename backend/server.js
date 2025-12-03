@@ -1,7 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -42,7 +41,7 @@ app.use('/api/categorias', categoriaRoutes);
 app.use('/api/productos', productoRoutes);
 app.use('/api/pedidos', pedidoRoutes);
 app.use('/api/pagos', pagoRoutes);
-app.use('/api/resenas', resenaRoutes);
+app.use('/api/resenia', resenaRoutes);
 
 // manejador de errores global (debe ir al final)
 app.use(errorHandler);
