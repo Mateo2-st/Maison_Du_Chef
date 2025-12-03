@@ -1,17 +1,21 @@
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 dotenv.config();
 
 export const verifyToken = (req, res, next) => {
-    const authHeader = req.headers.authorization || '';
-    const token = authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : null;
-    if (!token) return res.status(401).json({ msg: 'No token, acceso denegado' });
+    const header = req.headers.authorization;
+
+    if (!header || !header.startsWith("Bearer "))
+        return res.status(401).json({ message: "Acceso denegado: no hay token" });
+
+    const token = header.split(" ")[1];
 
     try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = payload; // payload puede tener { idUsuario, id_rol, correo, ... }
-    next();
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded; 
+        next();
     } catch (err) {
-    return res.status(401).json({ msg: 'Token inválido' });
+        return res.status(401).json({ message: "Token inválido" });
     }
 };
+

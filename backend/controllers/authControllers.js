@@ -21,7 +21,7 @@ export const register = async (req, res) => {
         }
 
         // Rol por defecto
-        const roleName = role || "usuario";
+        const roleName = role || "usuario"; 
         const roleObj = await getRoleByName(roleName);
 
         if (!roleObj) {
